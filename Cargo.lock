@@ -135,14 +135,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "repro_profile"
-version = "0.1.0"
-dependencies = [
- "pyo3",
- "repro_core",
-]
-
-[[package]]
 name = "repro_python"
 version = "0.1.0"
 dependencies = [
