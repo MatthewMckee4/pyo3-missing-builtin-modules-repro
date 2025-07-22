@@ -1,13 +1,19 @@
-use pyo3::prelude::*;
-use repro_core::import_missing_builtin;
+use pyo3::{ffi::c_str, PyResult, Python};
 
-#[pyfunction]
-pub fn repro_run(py: Python) -> PyResult<String> {
-    import_missing_builtin(py)
+pub fn import_missing_builtin(py: Python) -> PyResult<String> {
+    py.run(c_str!("import pytest; print(pytest)"), None, None)
+        .unwrap();
+    Ok("ok".to_string())
 }
 
-#[pymodule]
-pub fn _repro(_py: Python<'_>, m: &Bound<'_, PyModule>) -> PyResult<()> {
-    m.add_function(wrap_pyfunction!(repro_run, m)?)?;
-    Ok(())
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_import_missing_builtin() {
+        Python::with_gil(|py| {
+            import_missing_builtin(py).unwrap();
+        });
+    }
 }

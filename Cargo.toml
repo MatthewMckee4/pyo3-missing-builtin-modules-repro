@@ -10,5 +10,3 @@ edition = "2021"
 pyo3 = { version = "0.25.1", features = ["auto-initialize"] }
 
 repro = { path = "crates/repro" }
-repro_core = { path = "crates/repro_core" }
-repro_profile = { path = "crates/repro_profile" }
