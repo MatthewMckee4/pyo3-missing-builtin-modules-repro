@@ -13,7 +13,7 @@ classifiers = [
 dynamic = ["version"]
 
 [tool.maturin]
-manifest-path = "crates/repro_python/Cargo.toml"
+manifest-path = "crates/repro/Cargo.toml"
 module-name = "repro._repro"
 python-source = "python"
 features = ["pyo3/extension-module"]

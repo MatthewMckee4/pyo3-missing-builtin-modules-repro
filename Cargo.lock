@@ -128,10 +128,18 @@ dependencies = [
 ]
 
 [[package]]
-name = "repro"
+name = "repro_core"
 version = "0.1.0"
 dependencies = [
  "pyo3",
+]
+
+[[package]]
+name = "repro_python"
+version = "0.1.0"
+dependencies = [
+ "pyo3",
+ "repro_core",
 ]
 
 [[package]]
