@@ -38,4 +38,4 @@ jobs:
 
       - name: Run cargo test
         run: |
-          cargo test
+          uv run --no-project cargo test
