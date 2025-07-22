@@ -1,0 +1,13 @@
+[package]
+name = "repro_python"
+version = "0.1.0"
+edition = { workspace = true }
+
+[lib]
+name = "repro"
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+repro_core = { workspace = true }
+
+pyo3 = { workspace = true }

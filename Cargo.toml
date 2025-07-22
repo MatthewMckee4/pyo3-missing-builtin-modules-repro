@@ -1,0 +1,14 @@
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+pyo3 = { version = "0.25.1", features = ["auto-initialize"] }
+
+repro = { path = "crates/repro" }
+repro_core = { path = "crates/repro_core" }
+repro_profile = { path = "crates/repro_profile" }
