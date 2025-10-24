@@ -23,7 +23,8 @@ jobs:
 
       - name: Setup virtual environment
         run: |
-          uv venv -p ${{ matrix.python-version }}
+          uv python install ${{ matrix.python-version }}
+          uv venv -p ${{ matrix.python-version }} --clear
           uv sync
 
       - name: Set up Rust
