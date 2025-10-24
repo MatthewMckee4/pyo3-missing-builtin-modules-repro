@@ -32,7 +32,7 @@ jobs:
           toolchain: stable
           override: true
 
-      - name: Run cargo test
+      - name: Run cargo ${{ matrix.command }}
         run: |
           uv run cargo ${{ matrix.command }}
 
