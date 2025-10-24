@@ -5,7 +5,8 @@ To setup and see the issue run:
 ```
 uv venv
 uv pip install pytest
-cargo test
+# Activate virtual env, here we can use uv to activate it.
+uv run cargo test
 ```
 
 This will run in a failing test as `import pytest` fails.
